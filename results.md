@@ -1,128 +1,51 @@
-\#  Sentiment Classification Results (BERT Fine-Tuning)
-
-
-
-\## Model Details
-
-\- Base model: bert-base-uncased
-
-\- Fine-tuning method: Hugging Face Trainer (Supervised Fine-Tuning)
-
-\- Number of classes: 5 (0–4)
-
-\- Epochs: 3
-
-\- Dataset: Custom sentiment dataset
-
-
-
-\---
-
-
-
-\##  Performance Metrics
-
-
-
-\### Accuracy
-
-\*\*Accuracy: 0.7355 (\~73.6%)\*\*
-
-
-
-\---
-
-
-
-\### Precision, Recall, F1-Score
-
-
-
-| Class | Precision | Recall | F1-score | Support |
-
-|------|----------|--------|----------|---------|
-
-| 0 | 0.00 | 0.00 | 0.00 | 3 |
-
-| 1 | 0.74 | 0.69 | 0.71 | 93 |
-
-| 2 | 0.00 | 0.00 | 0.00 | 28 |
-
-| 3 | 0.74 | 0.92 | 0.82 | 151 |
-
-| 4 | 0.00 | 0.00 | 0.00 | 1 |
-
-
-
-\---
-
-
-
-\##  Confusion Matrix
-
-
-
-
-
-\[\[ 0 0 0 3 0]
-
-\[ 0 64 0 29 0]
-
-\[ 0 10 0 18 0]
-
-\[ 0 12 0 139 0]
-
-\[ 0 1 0 0 0]]
-
-
-
-
-
-\---
-
-
-
-\##  Observations
-
-
-
-\- The model performs well on class \*\*1 and 3\*\*, which dominate the dataset.
-
-\- Classes \*\*0, 2, and 4 are never correctly predicted\*\*, indicating strong class imbalance.
-
-\- The model is biased toward majority classes.
-
-\- Recall for class 3 is high (0.92), showing strong learning for dominant patterns.
-
-
-
-\---
-
-
-
-\##  Limitations
-
-
-
-\- Dataset is imbalanced
-
-\- Small number of samples in minority classes
-
-\- No advanced hyperparameter tuning applied
-
-
-
-\---
-
-
-
-\##  Possible Improvements
-
-
-
-\- Apply class weighting or oversampling
-
-\- Tune learning rate and batch size
+Fine-Tuning Results — Gemma 2 2B IT Model
+TEST 1
+Metric	Value
+Accuracy	0.8338
+Precision	0.8666
+Recall	0.8338
+F1-score	0.8314
+Confusion Matrix
+[[  2   0   0   0]
+ [  1  45   3   2]
+ [  0  33  57  16]
+ [  0   7   3 222]]
+TEST 2
+Metric	Value
+Accuracy	0.8154
+Precision	0.7877
+Recall	0.8154
+F1-score	0.8000
+Confusion Matrix
+[[  1  15   7   2   0]
+ [  2 335  25   8   0]
+ [  0  25  75  14   0]
+ [  4   7   5 119   0]
+ [  0   3   1   2   0]]
+TEST 3
+Metric	Value
+Accuracy	0.8852
+Precision	0.8822
+Recall	0.8852
+F1-score	0.8820
+Confusion Matrix
+[[  6   4   3   3   0]
+ [  0 130  11   9   0]
+ [  1  13  50   8   0]
+ [  1   7   9 354   0]
+ [  0   0   0   1   0]]
+TEST 4
+Metric	Value
+Accuracy	0.8768
+Precision	0.8896
+Recall	0.8768
+F1-score	0.8811
+Confusion Matrix
+[[  1   0   1   1   0]
+ [  0  80  12   1   0]
+ [  1   4  19   4   0]
+ [  0   2   7 142   0]
+ [  0   1   0   0   0]]
 
 \- Train for more epochs
 
