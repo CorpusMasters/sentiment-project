@@ -1,7 +1,7 @@
 from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments, AutoTokenizer
 from datasets import load_dataset
 
-dataset = load_dataset("your_dataset_name")
+dataset = load_dataset("OPJ_korpus_anotiran_finalno")
 
 model = AutoModelForSequenceClassification.from_pretrained(
     "bert-base-uncased",
